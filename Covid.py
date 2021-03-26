@@ -8,15 +8,15 @@ iso3_name = input('Enter the iso country name : ').lower()  # can, aus, tha
 
 # Covid-19 Update
 
-url_update = "https://covid-19-data.p.rapidapi.com/country"
+url_update = 'https://covid-19-data.p.rapidapi.com/country'
 
 headers = {
-    'x-rapidapi-key': "e6a1bed72dmshbffa66c61907947p1ca1fejsn6d5bfdf20e76",
-    'x-rapidapi-host': "covid-19-data.p.rapidapi.com"
+    'x-rapidapi-key': 'e6a1bed72dmshbffa66c61907947p1ca1fejsn6d5bfdf20e76',
+    'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
 }
 
 response = requests.request(
-    "GET", url_update, headers=headers, params={"name": country_name})
+    'GET', url_update, headers=headers, params={'name': country_name})
 result_update = response.json()
 # print(result_update)
 
@@ -24,13 +24,13 @@ result_update = response.json()
 # print('---'*10)
 # Covid-19 Vaccine
 
-url_vaccine = "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/country-report-iso-based/"+country_name+'/'+iso3_name
+url_vaccine = 'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/country-report-iso-based/'+country_name+'/'+iso3_name
 headers = {
-    'x-rapidapi-key': "e6a1bed72dmshbffa66c61907947p1ca1fejsn6d5bfdf20e76",
-    'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com"
+    'x-rapidapi-key': 'e6a1bed72dmshbffa66c61907947p1ca1fejsn6d5bfdf20e76',
+    'x-rapidapi-host': 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com'
 }
 
-response = requests.request("GET", url_vaccine, headers=headers)
+response = requests.request('GET', url_vaccine, headers=headers)
 result_vaccine = response.json()
 # print(result_vaccine)
 # print('---'*10)
